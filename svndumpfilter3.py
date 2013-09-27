@@ -613,7 +613,7 @@ def fetch_rev_rename(repos, srcrev, srcpath, path, fout, flog, format):
 
             lines = ("Node-copyfrom-path: %s" % srcpath,
                      "Node-copyfrom-rev: %d" % srcrev)
-            lump_sub.setprop('svn:untangled', os.linesep.join(lines))
+            lump_sub.setprop('svn:untangled', "\n".join(lines))
 
         write_lump(fout, lump_sub)
 
