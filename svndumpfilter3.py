@@ -565,7 +565,7 @@ def fetch_rev_rename(repos, srcrev, srcpath, path, fout, flog, format):
     if opts.debug:
         print >> flog, ("Running command: '%s | %s'" %
                         (' '.join(cmd), ' '.join(cmd_filter)))
-    fnull = open('/dev/null', 'w')
+    fnull = open(os.devnull, 'w')
     p1 = Popen(cmd, stdout=PIPE, stderr=fnull)
     p2 = Popen(cmd_filter, stdin=p1.stdout,
                stdout=PIPE, stderr=fnull)
