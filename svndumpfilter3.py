@@ -448,7 +448,7 @@ class Lump:
 
 
 format_re = re.compile('SVN-fs-dump-format-version: (\d+)\s*$')
-uuid_re = re.compile('UUID: ([0-9a-f\-]+)\s*$')
+uuid_re = re.compile('UUID: ([0-9a-fA-F\-]+)\s*$')
 
 def read_dump_header(f):
     """
