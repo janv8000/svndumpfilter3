@@ -560,8 +560,7 @@ def fetch_rev_rename(repos, srcrev, srcpath, path, fout, flog, format):
 
     # Must find the source node, as it existed in the given revision, and copy
     # it in full.
-    cmd = ('svnadmin', 'dump', '-r', str(srcrev),
-           opts.repos, srcpath)
+    cmd = ('svnadmin', 'dump', '-r', str(srcrev), opts.repos)
     cmd_filter = ('svndumpfilter', 'include', srcpath)
     if opts.debug:
         print >> flog, ("Running command: '%s | %s'" %
